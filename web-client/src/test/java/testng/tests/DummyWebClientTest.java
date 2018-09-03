@@ -21,7 +21,7 @@ public class DummyWebClientTest extends WebClientTestBase {
 //                .selectDB(DB_NAME)
 //                .signIn(USERNAME, PASSWORD);
 
-        System.setProperty("webdriver.chrome.driver", "web-client/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
 
