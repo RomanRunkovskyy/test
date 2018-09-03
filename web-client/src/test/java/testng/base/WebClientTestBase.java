@@ -29,6 +29,7 @@ public class WebClientTestBase {
         Configuration.browser = WebClientProperties.readString("browser");
         Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
         System.setProperty("webdriver.ie.driver", WebClientProperties.readString("ie.webdriver.path"));
+        System.setProperty("webdriver.chrome.driver",WebClientProperties.readString("chrome.webdriver.path"));
 
         Commands.getInstance().add("safeWaitUntil", new SafeWaitUntilCommand());
         Commands.getInstance().add("click", new ClickCommand());
