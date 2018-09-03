@@ -1,6 +1,8 @@
 package testng.tests;
 
 import com.csdc.webclient.pageobjects.LoginPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import testng.base.WebClientTestBase;
 
@@ -14,8 +16,13 @@ public class DummyWebClientTest extends WebClientTestBase {
 
     @Test
     public void userLoginTest() {
-        loginPage.open()
-                .selectDB(DB_NAME)
-                .signIn(USERNAME, PASSWORD);
+//        loginPage.open()
+//                .selectDB(DB_NAME)
+//                .signIn(USERNAME, PASSWORD);
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://www.google.com");
+
+
     }
 }
