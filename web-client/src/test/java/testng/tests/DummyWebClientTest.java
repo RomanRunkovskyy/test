@@ -4,6 +4,7 @@ import com.csdc.webclient.core.WebClientProperties;
 import com.csdc.webclient.pageobjects.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import testng.base.WebClientTestBase;
 
@@ -22,7 +23,9 @@ public class DummyWebClientTest extends WebClientTestBase {
 //                .signIn(USERNAME, PASSWORD);
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions ChromeOptions = new ChromeOptions();
+        ChromeOptions.addArguments("window-size=1024,768", "--no-sandbox");
+        WebDriver driver = new ChromeDriver(ChromeOptions);
         driver.get("http://www.google.com");
 
 
