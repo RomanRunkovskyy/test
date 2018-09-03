@@ -1,0 +1,12 @@
+repositories {}
+
+dependencies {
+    compile group: 'com.codeborne', name: 'selenide', version: '4.14.0'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/suites/regression_webclient.xml'
+    }
+}
+

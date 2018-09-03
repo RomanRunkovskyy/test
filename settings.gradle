@@ -1,0 +1,4 @@
+rootProject.name = 'csdc-test'
+include 'web-client','api-client'
+
+

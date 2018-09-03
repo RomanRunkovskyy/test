@@ -1,0 +1,30 @@
+allprojects {
+    apply plugin: 'java'
+
+    group 'csdc-automation'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-core', version: '5.0.8.RELEASE'
+        compile group: 'org.springframework', name: 'spring-beans', version: '5.0.8.RELEASE'
+        compile group: 'org.springframework', name: 'spring-context', version: '5.0.8.RELEASE'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+        compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    }
+}
+
+subprojects {
+    dependencies {
+        compile project(':')
+        testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+        testCompile group: 'com.google.inject', name: 'guice', version: '4.0'
+        testCompile group: 'org.uncommons', name: 'reportng', version: '1.1.4'
+    }
+}
