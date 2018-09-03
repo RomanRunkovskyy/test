@@ -1,5 +1,6 @@
 package testng.tests;
 
+import com.csdc.webclient.core.WebClientProperties;
 import com.csdc.webclient.pageobjects.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,7 @@ public class DummyWebClientTest extends WebClientTestBase {
 //                .selectDB(DB_NAME)
 //                .signIn(USERNAME, PASSWORD);
 
+        System.setProperty("webdriver.chrome.driver", "web-client/src/test/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
 
