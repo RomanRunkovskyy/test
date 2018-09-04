@@ -46,11 +46,11 @@ public class DummyWebClientTest extends WebClientTestBase {
 
 
         //works for Selenide  Chrome on linux with Xvbf
-//        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
-//        Configuration.browser = "Chrome";
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-//        Selenide.open("http://www.google.com");
-//        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
+        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+        Configuration.browser = "Chrome";
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+        Selenide.open("http://www.google.com");
+        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
 
 
 
@@ -61,10 +61,10 @@ public class DummyWebClientTest extends WebClientTestBase {
 //        log.info("-----------:" + driver.findElement(By.name("q")).getTagName());
 
 
-        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
-        Configuration.browser = "ie";
-        System.setProperty("webdriver.ie.driver", "src/test/resources/IEDriverServer.exe");
-        Selenide.open("http://www.google.com");
-        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
+//        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+//        Configuration.browser = "ie";
+//        System.setProperty("webdriver.ie.driver", "src/test/resources/IEDriverServer.exe");
+//        Selenide.open("http://www.google.com");
+//        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
     }
 }
