@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -32,7 +33,7 @@ public class DummyWebClientTest extends WebClientTestBase {
 //                .signIn(USERNAME, PASSWORD);
 
 
-        //works for Chrome on linux
+        //works for Selenium  Chrome on linux with Xvbf
         /*System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions ChromeOptions = new ChromeOptions();
         ChromeOptions.addArguments("window-size=1024,768");
@@ -44,15 +45,26 @@ public class DummyWebClientTest extends WebClientTestBase {
         log.info("-----------:" + driver.findElement(By.name("q")).getTagName());*/
 
 
-
-        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+        //works for Selenide  Chrome on linux with Xvbf
+/*        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
         Configuration.browser = "Chrome";
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         Selenide.open("http://www.google.com");
+        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());*/
+
+
+
+
+//        System.setProperty("webdriver.ie.driver", "src/test/resources/IEDriverServer.exe");
+//        WebDriver driver = new InternetExplorerDriver();
+//        driver.get("http://www.google.com");
+//        log.info("-----------:" + driver.findElement(By.name("q")).getTagName());
+
+
+        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+        Configuration.browser = "ie";
+//        System.setProperty("webdriver.ie.driver", "src/test/resources/chromedriver");
+        Selenide.open("http://www.google.com");
         System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
-
-
-
-
     }
 }
