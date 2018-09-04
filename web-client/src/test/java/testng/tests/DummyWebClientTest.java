@@ -31,7 +31,7 @@ public class DummyWebClientTest extends WebClientTestBase {
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions ChromeOptions = new ChromeOptions();
-        ChromeOptions.addArguments("window-size=1024,768", "--no-sandbox");
+        ChromeOptions.addArguments("window-size=1024,768");
         WebDriver driver = new ChromeDriver(ChromeOptions);
         driver.get("http://www.google.com");
 
