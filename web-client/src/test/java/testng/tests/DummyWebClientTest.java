@@ -28,9 +28,9 @@ public class DummyWebClientTest extends WebClientTestBase {
 
     @Test
     public void userLoginTest() {
-//        loginPage.open()
-//                .selectDB(DB_NAME)
-//                .signIn(USERNAME, PASSWORD);
+        loginPage.open()
+                .selectDB(DB_NAME)
+                .signIn(USERNAME, PASSWORD);
 
 
         //works for Selenium  Chrome on linux with Xvbf
@@ -46,11 +46,11 @@ public class DummyWebClientTest extends WebClientTestBase {
 
 
         //works for Selenide  Chrome on linux with Xvbf
-        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
-        Configuration.browser = "Chrome";
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        Selenide.open("http://www.google.com");
-        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
+//        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+//        Configuration.browser = "Chrome";
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+//        Selenide.open("http://www.google.com");
+//        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
 
 
 
