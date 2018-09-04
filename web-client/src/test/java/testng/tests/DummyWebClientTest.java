@@ -1,5 +1,7 @@
 package testng.tests;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.csdc.webclient.core.WebClientProperties;
 import com.csdc.webclient.pageobjects.LoginPage;
 import org.openqa.selenium.By;
@@ -29,7 +31,9 @@ public class DummyWebClientTest extends WebClientTestBase {
 //                .selectDB(DB_NAME)
 //                .signIn(USERNAME, PASSWORD);
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+
+        //works for Chrome on linux
+        /*System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions ChromeOptions = new ChromeOptions();
         ChromeOptions.addArguments("window-size=1024,768");
         WebDriver driver = new ChromeDriver(ChromeOptions);
@@ -37,7 +41,17 @@ public class DummyWebClientTest extends WebClientTestBase {
 
         driver.findElement(By.name("q")).sendKeys("BLALA");
         driver.findElement(By.name("q")).sendKeys(Keys.RETURN);
-        log.info("-----------:" + driver.findElement(By.name("q")).getTagName());
+        log.info("-----------:" + driver.findElement(By.name("q")).getTagName());*/
+
+
+
+        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+        Configuration.browser = "Chrome";
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        Selenide.open("http://www.google.com");
+        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
+
+
 
 
     }
