@@ -47,7 +47,7 @@ public class DummyWebClientTest extends WebClientTestBase {
 
         Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
         Configuration.browser = "Chrome";
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         Selenide.open("http://www.google.com");
         System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
 
