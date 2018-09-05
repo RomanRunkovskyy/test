@@ -5,7 +5,7 @@ dependencies {
 }
 
 test {
-    System.getProperty("adserverIp")
+    println "----------property: " + System.getProperty("browser")
     useTestNG() {
         suites 'src/test/resources/suites/regression_webclient.xml'
     }

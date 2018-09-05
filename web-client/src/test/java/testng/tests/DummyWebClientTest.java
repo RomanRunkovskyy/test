@@ -28,9 +28,11 @@ public class DummyWebClientTest extends WebClientTestBase {
 
     @Test
     public void userLoginTest() {
-        loginPage.open()
-                .selectDB(DB_NAME)
-                .signIn(USERNAME, PASSWORD);
+//        loginPage.open()
+//                .selectDB(DB_NAME)
+//                .signIn(USERNAME, PASSWORD);
+
+        log.error("---------------------"+System.getProperty("browser"));
 
 
         //works for Selenium  Chrome on linux with Xvbf
