@@ -6,6 +6,7 @@ dependencies {
 
 test {
     println "----------property: " + System.getProperty("browser")
+    systemProperty 'browser', System.getProperty("browser")
     useTestNG() {
         suites 'src/test/resources/suites/regression_webclient.xml'
     }
