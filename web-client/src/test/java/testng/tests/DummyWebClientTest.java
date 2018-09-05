@@ -1,15 +1,6 @@
 package testng.tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.csdc.webclient.core.WebClientProperties;
 import com.csdc.webclient.pageobjects.LoginPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -28,13 +19,9 @@ public class DummyWebClientTest extends WebClientTestBase {
 
     @Test
     public void userLoginTest() {
-//        loginPage.open()
-//                .selectDB(DB_NAME)
-//                .signIn(USERNAME, PASSWORD);
-
-        log.error("---------------------"+System.getProperty("browser"));
-        log.error("---------------------"+System.getProperty("jenkins.prop.amanda.db.name"));
-        log.error("---------------------"+System.getProperty("jenkins.prop.amanda.base.url"));
+        loginPage.open()
+                .selectDB(DB_NAME)
+                .signIn(USERNAME, PASSWORD);
 
 
         //works for Selenium  Chrome on linux with Xvbf
@@ -55,8 +42,6 @@ public class DummyWebClientTest extends WebClientTestBase {
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 //        Selenide.open("http://www.google.com");
 //        System.out.println("-----------:" + Selenide.$(By.name("q")).getTagName());
-
-
 
 
 //        System.setProperty("webdriver.ie.driver", "src/test/resources/IEDriverServer.exe");

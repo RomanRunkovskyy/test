@@ -5,13 +5,28 @@ dependencies {
 }
 
 test {
-    systemProperty 'jenkins.prop.browser', System.getProperty("jenkins.prop.browser")
-    systemProperty 'jenkins.prop.amanda.db.name', System.getProperty("jenkins.prop.amanda.db.name")
-    systemProperty 'jenkins.prop.amanda.base.url', System.getProperty("jenkins.prop.amanda.base.url")
-
-
+    dependsOn 'overrideWebClientProperties'
     useTestNG() {
         suites 'src/test/resources/suites/regression_webclient.xml'
+    }
+}
+
+task overrideWebClientProperties() {
+    ext.setWebClientPropertyFromJenkins = { prop, webclientPropKey, jenkinsPropKey ->
+        def value = System.properties.getProperty(jenkinsPropKey)
+        if (value != null) {
+            println String.format("Setting Jenkins property [%s] value to Web-client property [%s]", jenkinsPropKey, webclientPropKey)
+            prop.setProperty(webclientPropKey, value)
+        }
+    }
+    doLast {
+        File propFile = new File(projectDir.getPath() + "/src/main/resources/webclient.properties")
+        Properties prop = new Properties()
+        prop.load(new FileReader(propFile))
+        ext.setWebClientPropertyFromJenkins(prop, "browser", "jenkins.prop.browser")
+        ext.setWebClientPropertyFromJenkins(prop, "amanda.db.name", "jenkins.prop.amanda.db.name")
+        ext.setWebClientPropertyFromJenkins(prop, "amanda.base.url", "jenkins.prop.amanda.base.url")
+        prop.store(new FileOutputStream(propFile), "Overrided properties with Jenkins values")
     }
 }
 
