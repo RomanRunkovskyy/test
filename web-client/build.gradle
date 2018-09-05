@@ -5,14 +5,13 @@ dependencies {
 }
 
 test {
-    println "----------property: " + System.getProperty("browser")
-    systemProperty 'browser', System.getProperty("browser")
+    systemProperty 'jenkins.prop.browser', System.getProperty("jenkins.prop.browser")
+    systemProperty 'jenkins.prop.amanda.db.name', System.getProperty("jenkins.prop.amanda.db.name")
+    systemProperty 'jenkins.prop.amanda.base.url', System.getProperty("jenkins.prop.amanda.base.url")
+
+
     useTestNG() {
         suites 'src/test/resources/suites/regression_webclient.xml'
     }
-}
-
-task aaa() {
-    println "----------property: " + System.getProperty("browser")
 }
 

@@ -27,7 +27,7 @@ public class WebClientTestBase {
     @BeforeSuite
     public void setUp() {
         Configuration.browser = WebClientProperties.readString("browser");
-        Configuration.baseUrl = WebClientProperties.readString("selenide.base.url");
+        Configuration.baseUrl = WebClientProperties.readString("amanda.base.url");
         System.setProperty("webdriver.ie.driver", WebClientProperties.readString("ie.webdriver.path"));
         System.setProperty("webdriver.chrome.driver",WebClientProperties.readString("chrome.webdriver.path"));
 

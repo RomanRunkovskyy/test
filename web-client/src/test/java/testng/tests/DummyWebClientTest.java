@@ -33,6 +33,8 @@ public class DummyWebClientTest extends WebClientTestBase {
 //                .signIn(USERNAME, PASSWORD);
 
         log.error("---------------------"+System.getProperty("browser"));
+        log.error("---------------------"+System.getProperty("jenkins.prop.amanda.db.name"));
+        log.error("---------------------"+System.getProperty("jenkins.prop.amanda.base.url"));
 
 
         //works for Selenium  Chrome on linux with Xvbf
